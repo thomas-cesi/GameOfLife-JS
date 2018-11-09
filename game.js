@@ -31,6 +31,19 @@ function getNombreCellulesMortes(x, y) {
     return _dead;
 }
 
+function estCelluleMourrante(x,y) {
+    if(grille[x][y] == 0) {
+        if(getNombreCellulesMortes(x,y) > 2 || getNombreCellulesMortes(x,y) < 3 ) {
+            return true;
+            // Cellule est mourrante
+        }
+        else {
+            return false;
+            // Cellule reste vivante
+        }
+    }
+}
+
 // On parcours la grille
 for (indexLigne = 0; indexLigne < 5; indexLigne++) {
     for (indexColonne = 0; indexColonne < 5; indexColonne++) {

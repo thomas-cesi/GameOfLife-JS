@@ -14,17 +14,17 @@ function getNombreCellulesMortes(x, y) {
     if (x > 0 && y > 0 && grille[x-1][y-1] == 0)
         _dead++;
     if (y > 0 && grille[x][y-1] == 0)
-        _dead++;    
+        _dead++;
     if (x < _maxX && y > 0 && grille[x+1][y-1] == 0)
         _dead++;
     if (x > 0 && grille[x-1][y] == 0)
-        _dead++; 
+        _dead++;
     if (x < _maxX && grille[x+1][y] == 0)
         _dead++;
     if (x > 0 && y < _maxY && grille[x-1][y+1] == 0)
         _dead++;
     if (y < _maxY && grille[x][y+1] == 0)
-        _dead++;    
+        _dead++;
     if (y < _maxY && x < _maxX && grille[x+1][y+1] == 0)
         _dead++;
 

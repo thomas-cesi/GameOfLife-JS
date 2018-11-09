@@ -31,9 +31,29 @@ function getNombreCellulesMortes(x, y) {
     return _dead;
 }
 
-// On parcours la grille
-for (indexLigne = 0; indexLigne < 5; indexLigne++) {
-    for (indexColonne = 0; indexColonne < 5; indexColonne++) {
+function drawGrid() {
 
+  // On parcours la grille
+  for (indexLigne = 0; indexLigne < 5; indexLigne++) {
+    var row = document.createElement('tr');
+    row.setAttribute("id", indexLigne);
+    document.getElementById('grid').appendChild(row);
+    for (indexColonne = 0; indexColonne < 5; indexColonne++) {
+      var cel = document.createElement('td');
+      if (grille[indexLigne][indexColonne] == 0) {
+        cel.classList.add('dead');
+        cel.innerHTML = "M";
+      } else {
+        cel.classList.add('alive');
+        cel.innerHTML = "V";
+      }
+      document.getElementById(indexLigne).appendChild(cel);
     }
+  }
+
+
+}
+
+window.onload = function () {
+  drawGrid();
 }
